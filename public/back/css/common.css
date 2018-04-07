@@ -100,7 +100,7 @@ a:active {
 .lt_main{
   width: 100%;
   height: 100%;
-  background-color: pink;
+  /*background-color: pink;*/
   padding-left: 180px;
   padding-top: 50px;
   transition: all 1s;
@@ -141,4 +141,11 @@ a:active {
 /*模态框*/
 .modal-body p{
   color: #A94442;
+}
+
+/*图表*/
+.lt_content .echarts_1,
+.lt_content .echarts_2{
+  width: 48%;
+  height: 400px;
 }
