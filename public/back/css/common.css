@@ -149,3 +149,9 @@ a:active {
   width: 48%;
   height: 400px;
 }
+
+/*表格样式*/
+.table.table-bordered td{
+  text-align: center;
+  vertical-align: middle;
+}
