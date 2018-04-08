@@ -70,12 +70,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>女士馆</td>
-            <td>新百伦</td>
-            <td><img src="images/default.jpg" alt="" width="50"></td>
-          </tr>
+          <!--刨坑-->
         </tbody>
       </table>
     </div>
@@ -99,7 +94,31 @@
         <!--<p><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗?</p>-->
         <form id="form">
           <div class="form-group">
-            <input type="text" class="form-control"  placeholder="请输入一级分类" name="categoryName">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span class="dropdown-text">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <!--刨坑-->
+              </ul>
+            </div>
+
+            <input type="hidden" name="categoryId">
+
+            <!--火热品牌-->
+            <input type="hidden" name="hot" value="1">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control"  placeholder="请输入二级分类" name="brandName">
+          </div>
+          <div class="form-group">
+            <label class="btn btn-default" for="fileupload">上传图片</label>
+            <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic" style="display: none;">
+          </div>
+          <div class="form-group">
+            <img src="images/none.png" id="imgBox" width="100" alt="">
+            <input type="hidden" name="brandLogo">
           </div>
         </form>
 
@@ -141,15 +160,25 @@
 <script src="lib/echarts/echarts.min.js"></script>
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="js/common.js"></script>
 <script src="js/second.js"></script>
 
-<script type="text/template" id="tmp_first">
+<script type="text/template" id="tmp_second">
   {{each rows v i}}
-  <tr>
-    <td>{{(page-1)*page+i+1}}</td>
-    <td>{{v.categoryName}}</td>
-  </tr>
+    <tr>
+      <td>{{(page-1)*size+i+1}}</td>
+      <td>{{v.categoryName}}</td>
+      <td>{{v.brandName}}</td>
+      <td><img src="{{v.brandLogo}}" alt="" width="50"></td>
+    </tr>
+  {{/each}}
+</script>
+
+<script type="text/template" id="tmp_dropdown">
+  {{each rows v i}}
+    <li><a href="#" data-id="{{v.id}}">{{v.categoryName}}</a></li>
   {{/each}}
 </script>
 </body>
