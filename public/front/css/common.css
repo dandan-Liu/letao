@@ -93,6 +93,64 @@ body{
   text-align: center;
   margin-top: 8px;
 }
+.lt_footer li a.current{
+  color: orange;
+}
+.lt_footer li a.current p{
+  color: orange;
+}
 .lt_footer li a p{
   color: #fff;
+}
+
+/*搜索框提取*/
+.lt_search{
+  padding: 10px;
+  position: relative;
+}
+
+.lt_search input{
+  height: 34px;
+  border: 1px solid #007AFF;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0;
+  color: #666;
+}
+.lt_search button{
+  position: absolute;
+  right: 10px;
+  top:10px;
+  border-radius: 0 5px 5px 0;
+}
+
+
+/*商品模块提取*/
+.lt_product{
+  padding: 10px;
+  overflow: hidden;
+}
+.lt_product .lt_product_item{
+  float: left;
+  display: block;
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.lt_product .lt_product_item img{
+  display: block;
+  width: 100%;
+}
+.lt_product .lt_product_item .price{
+  color: #FF3636;
+}
+
+.lt_product .lt_product_item .old{
+  text-decoration: line-through;
+}
+
+.lt_product .lt_product_item:nth-child(odd){
+  margin-right: 4%;
 }

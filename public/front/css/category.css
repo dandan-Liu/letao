@@ -26,6 +26,9 @@
   height: 100%;
   position: relative;
 }
+.category_right p{
+  padding: 20px;
+}
 .category_right li{
   float: left;
   width: 33.33%;
